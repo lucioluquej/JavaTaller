@@ -1,0 +1,99 @@
+El programa principal se declara así:
+public class NombreAplicacion {
+ public static void main(String[] args) {
+ /* Código */
+    }
+}
+
+Ejemplos de declaracion de variables:
+
+ boolean encontre = false; // Declaro la variable encontre como boolean e inicializo como false
+ int miDNI = 11222333, tuDNI = 10555444; // Declara la variable miDNI y tuDNI como int e inicializa sus valores enteros
+ char sexo, inicial = 'C'; //Declara las variables sexo e inicial como char y (en esta linea) da valor a inicial
+ sexo = 'F'; // Da valor de char a sexo
+ double miSueldo = 1000.30; //  Declara la variable miSueldo como real (double) e inicializa con un valor real
+ String miNombre = "Pepe"; // Declara la variable miNombre como String y le da valor Pepe
+
+Operadores simples
+ int i = 3; // Declara e ingresa valor i es 3
+ i++; // i sumara una unidad, vale 4
+ i--; // i restara una unidad, vale 3
+ 
+ Calculos
+ int result = 1 + 2; // Declara e ingresa valor result vale 1+2 (3)
+ result = result - 1; // result menos 1 (2)
+ result = result * 2; // result multiplicado 2 (4)
+ result = result / 2; // result dividido 2 (2)
+ result = result % 2; // result operador resto (funciona como resta...) ahora vale 0 
+ 
+ int i = 4/3; // División entera i es 4 dividido 3 (1.33) pero solo valor entero (i vale 1)
+ double d1 = 4.0/3.0; // División de real d1 = 1.3333
+ double d2 = 4/3; // División entera d2 = 1.0 
+ double d3 = (double) 4/3; // División real d3 = 1.333
+ 
+ ---                No olvidar importar de la libreria java las funciones de Leer y GenerarAleatorio                                                    ---
+ 
+ Leer valores:
+ System.out.println("Ingrese nombre");
+ String nombre = Lector.leerString(); //Lee y devuelve el string ingresado antes del enter
+ System.out.println("Ingrese si trabaja (true/false)"); 
+ boolean trabaja = Lector.leerBoolean(); //Lee y devuelve el boolean ingresado antes del enter
+ System.out.println("Ingrese edad");
+ int edad = Lector.leerInt(); //Lee y devuelve el int ingresado antes del enter
+ System.out.println("Ingrese sueldo");
+ double sueldo = Lector.leerDouble(); //Lee y devuelve el double ingresado antes del enter
+ 
+ System.out.println("N:" + nombre + " T:" + trabaja + " E:" + edad + " S:" + sueldo );
+ 
+ Generar valores random:
+ GeneradorAleatorio.iniciar(); //inicia el generador aleatorio
+ System.out.println(GeneradorAleatorio.generarInt(10)); //genera un int entre 0 y 9
+ System.out.println(GeneradorAleatorio.generarDouble(10)); //genera un double entre 0 y 9
+ System.out.println(GeneradorAleatorio.generarBoolean()); //genera un boolean
+ System.out.println(GeneradorAleatorio.generarString(4)); //genera un string de long. 4
+
+Estructuras de control:
+//Si solo hay una accion no hace falta utilizar {} para sus begin y end
+
+if (condición)
+{
+  acción(es) a realizar para la condicion
+else
+  acción(es) a realizar si no cumple la condicion
+  }
+
+while (condición) {
+   acción(es) a realizar cuando cumple la condicion
+   }
+
+do{
+ acción(es)   // Ejectuta una accion o mas y evalua la condicion
+} while (condición)   // Vuelve a evaluar condiciones y si cumple vuelve a ejecutar las accion(es)
+
+Estructura de repeticion: 
+for (inicialización; condición; expresión) 
+  acción(es
+//Ejemplo
+int i;    // Declara i como int
+for (i=1; i<= 10; i++)  // (Inicializa i con valor 1, mientras i sea menor/igual a 10, i aumentara en 1)
+  System.out.println(i);  // Accion ejemplo: Imprime el valor actual de i
+  
+ Estructura de vector:
+ int [] contador = new int[10];   // Crea un vector de int llamada contador y le brinda 10 posiciones
+ for (i=0;i<10;i++) contador[i]=i;    //Carga un valor a cada posicion del vector
+ …
+ System.out.println("La Pos. 1 tiene " +contador[1]);   // Imprime la posicion del vector contador en posicion 1
+
+Estructura de matriz:
+int [][] tabla = new int[3][4];   // Crea una matriz 'tabla' de int y le brinda valor de 3x4
+int i, j;   // Declara variables int 
+for (i=0;i<3;i++)   // Para i, vease como fila, se sumara 1 posicion hasta ser igual a 3
+  for (j=0;j<4;j++)   // Para j, vease como columna, se sumara 1 posicion hasta ser igual a 4
+    tabla[i][j]=GeneradorAleatorio.generarInt(10);  // Genera un valor aleatorio para la posicion actual (primero se completa la primer columna segun i)
+System.out.println("La Pos. 1,2 tiene " +tabla[1][2]);  // Imprime un valor de dicha posicion
+
+El esquema de la matriz seria asi:
+  j j j j 
+i
+i
+i
